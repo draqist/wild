@@ -1,11 +1,11 @@
 import { useState } from "react";
-import BodyContent from "./components/BodyContent";
+import { BodyContent } from "./components/BodyContent";
 import { NextImage, PrevImage } from "./styles/imageStyles/ImageStyles";
 import { BodyWrapper } from "./styles/Wrapper";
 import { carouseldata } from "./utils/data";
 import { handleNextScroll, handlePrevScroll } from "./utils/helper";
 
-function App() {
+export function App() {
   const [nextslide, setNextSlider] = useState<number>(1);
   const [prevslide, setPrevSlider] = useState<number>(4);
 
@@ -35,5 +35,3 @@ function App() {
     </BodyWrapper>
   );
 }
-
-export default App;

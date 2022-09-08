@@ -4,7 +4,7 @@ import TungstenBold2 from "./Tungsten-Bold.woff2";
 import TungstenSemi from "./Tungsten-Semibold.woff";
 import TungstenSemi2 from "./Tungsten-Semibold.woff2";
 
-const GlobalFonts = createGlobalStyle`
+export const GlobalFonts = createGlobalStyle`
     @font-face {
         font-family: 'Tungsten';
         src: local('Tungsten Bold'), local('TungstenBold'),
@@ -22,5 +22,3 @@ const GlobalFonts = createGlobalStyle`
         font-style: normal;
     };
 `;
-
-export default GlobalFonts;

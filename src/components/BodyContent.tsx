@@ -4,7 +4,7 @@ import { Wrapper } from "../styles/Wrapper";
 import { carouseldata } from "../utils/data";
 import { Carousel } from "../utils/types";
 
-const BodyContent = ({ first_line, second_line, img_2x, i, id, img }: Carousel) => {
+export const BodyContent = ({ first_line, second_line, img_2x, i, id, img }: Carousel) => {
   return (
     <Wrapper img={img_2x} id={i.toString()}>
       <ImageContainer>
@@ -50,5 +50,3 @@ const BodyContent = ({ first_line, second_line, img_2x, i, id, img }: Carousel) 
     </Wrapper>
   );
 };
-
-export default BodyContent;
