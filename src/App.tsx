@@ -1,5 +1,5 @@
 import { useState } from "react";
-import BodyContent from "./components/CentralImage";
+import BodyContent from "./components/BodyContent";
 import { NextImage, PrevImage } from "./styles/imageStyles/ImageStyles";
 import { BodyWrapper } from "./styles/Wrapper";
 import { carouseldata } from "./utils/data";

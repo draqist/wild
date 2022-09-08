@@ -16,6 +16,7 @@ const GlobalStyles = createGlobalStyle`
       height: 100%;
       width: 100%;
       scroll-behavior: smooth;
+      font-family: "Tungsten";
     }
     h1{
       margin: 0;
