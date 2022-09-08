@@ -1,26 +1,23 @@
 import styled from "styled-components";
-import img from "../images/image01@2x.jpg";
+import { wrapperBg } from "../utils/types";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<wrapperBg>`
   width: 100%;
-  padding: 16px;
   height: 100vh;
   background-size: cover;
   font-family: "Tungsten", sans-serif;
   color: white;
   background-color: black;
-  background-image: url(${img});
-  ::after {
-    filter: blur(200px);
-  }
-  h3 {
-    text-transform: uppercase;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 19px;
-    letter-spacing: 2px;
-    position: absolute;
-    top: 16px;
-    left: 16px;
-  }
+  background-image: url(${(props) => props.img});
+  flex-shrink: 0;
+  scroll-snap-align: center;
+`;
+
+export const BodyWrapper = styled.div`
+  display: flex;
+  overflow-y: hidden;
+  padding: 0;
+  height: 100vh;
+  scroll-snap-type: x proximity;
+  scroll-behavior: smooth;
 `;

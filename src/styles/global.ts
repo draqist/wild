@@ -26,5 +26,17 @@ const GlobalStyles = createGlobalStyle`
       text-transform: uppercase;
       letter-spacing: 6px;
     }
+    h3 {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 2px;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    color: white;
+    z-index: 4;
+  }
 `;
 export default GlobalStyles;

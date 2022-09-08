@@ -13,4 +13,3 @@ module.exports = {
     "react/no-unknown-property": "warn",
   },
 };
-

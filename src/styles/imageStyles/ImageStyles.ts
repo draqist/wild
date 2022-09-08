@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { wrapperBg } from "../../utils/types";
 
 export const ImageContainer = styled.div`
   position: relative;
@@ -27,13 +28,13 @@ export const MainImage = styled.div`
   height: 680px;
   overflow: hidden;
   position: relative;
-  border: 1px solid yellow;
-  border-radius: 10px;
+  border: 1px solid black;
+  border-radius: 20px;
   transition: all 2s ease-in;
   img {
     width: 100%;
     height: 100%;
-    border-radius: 10px;
+    border-radius: 20px;
   }
   h1 {
     white-space: nowrap;
@@ -55,32 +56,37 @@ export const MainImage = styled.div`
     margin: 0 auto;
     justify-content: center;
     p {
-      color: green;
+      color: white;
       font-size: 14px;
+      font-weight: 300;
     }
   }
 `;
-export const NextImage = styled.div`
+export const NextImage = styled.div<wrapperBg>`
   width: 248px;
   height: 330px;
-  border: 1px solid yellow;
+  border: 1px solid black;
   border-radius: 10px;
-  background-color: blue;
+  background-color: purple;
   position: absolute;
   top: 16px;
   right: 16px;
   z-index: 4;
+  background-image: url(${(props) => props.img});
+  background-size: contain;
+  background-position: center;
 `;
-export const PrevImage = styled.div`
+export const PrevImage = styled.div<wrapperBg>`
   width: 248px;
   height: 330px;
-  border: 1px solid yellow;
+  border: 1px solid black;
   border-radius: 10px;
   background-color: blue;
   position: absolute;
   bottom: 16px;
   left: 16px;
   z-index: 4;
+  background-image: url(${(props) => props.img});
+  background-position: center;
+  background-size: contain;
 `;
-
-/* export const PrevImage = styled.div`` */
