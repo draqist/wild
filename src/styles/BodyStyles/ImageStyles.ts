@@ -94,7 +94,6 @@ export const NextImage = styled.div<wrapperBg>`
   height: 330px;
   border: 1px solid black;
   border-radius: 10px;
-  background-color: purple;
   position: absolute;
   top: 16px;
   right: 16px;
@@ -125,7 +124,6 @@ export const PrevImage = styled.div<wrapperBg>`
   height: 330px;
   border: 1px solid black;
   border-radius: 10px;
-  background-color: blue;
   position: absolute;
   bottom: 16px;
   left: 16px;
