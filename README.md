@@ -1,6 +1,6 @@
 ### This was developed using Reactjs, Styled components, Framer and Typescript
 
-### To start kindly `cd` into the root folder and run  `yarn installl` or `npm install`
+### To start kindly `cd` into the root folder and run  `yarn install` or `npm install`
 This install all the dependencies needed to run this application successfully.
 
 #### It is a simple carousel with infinite scroll, some animation and interactions.
