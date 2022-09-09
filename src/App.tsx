@@ -4,6 +4,7 @@ import { BodyContent } from "./components/BodyContent";
 import { Mouse } from "./components/mouse";
 import { NextImage, PrevImage } from "./styles/BodyStyles/ImageStyles";
 import { BodyWrapper, Button, ButtonDiv, Splash } from "./styles/Wrapper";
+import { splashanimation, splashtext } from "./utils/animations";
 import { carouseldata } from "./utils/data";
 import { handleNextScroll, handlePrevScroll } from "./utils/helper";
 
@@ -13,16 +14,9 @@ export function App() {
   const ref = useRef(null);
   return (
     <AnimatePresence exitBeforeEnter>
-      <Splash
-        as={motion.div}
-        initial={{ y: 0 }}
-        animate={{ y: "-100vh", transition: { duration: 3, ease: "easeInOut", delay: 2 } }}
-      >
+      <Splash as={motion.div} variants={splashanimation} initial="initial" animate="animate">
         <div>
-          <motion.h2
-            initial={{ y: "220px" }}
-            animate={{ y: 0, originY: "-220px", transition: { duration: 1.25, ease: "easeInOut" } }}
-          >
+          <motion.h2 variants={splashtext} initial="initial" animate="animate">
             {" "}
             XYZ photography
           </motion.h2>

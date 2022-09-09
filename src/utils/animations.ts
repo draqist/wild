@@ -17,3 +17,12 @@ export const outlineanimation = {
     scale: 1,
   },
 };
+export const splashanimation = {
+  initial: { y: 0 },
+  animate: { y: "-100vh", transition: { duration: 3, ease: "easeInOut", delay: 2 } },
+};
+
+export const splashtext = {
+  initial: { y: "220px" },
+  animate: { y: 0, originY: "-220px", transition: { duration: 1.25, ease: "easeInOut" } },
+};

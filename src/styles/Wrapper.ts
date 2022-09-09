@@ -116,13 +116,20 @@ export const Splash = styled.div`
   top: 0;
   text-transform: uppercase;
   div {
-    height: 180px;
     overflow: hidden;
   }
   h2 {
     font-size: 220px;
     letter-spacing: 8px;
     color: white;
-    line-height: 220px;
+    @media (min-width: 1024px) and (max-width: 1260px) {
+      font-size: 160px;
+    }
+    @media (max-width: 768px) {
+      font-size: 110px;
+    }
+    @media (min-width: 348px) and (max-width: 765px) {
+      font-size: 45px;
+    }
   }
 `;
