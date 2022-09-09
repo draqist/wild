@@ -103,3 +103,26 @@ export const Button = styled.button`
     transition: all 0.2s ease-in;
   }
 `;
+
+export const Splash = styled.div`
+  position: absolute;
+  z-index: 30;
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  text-transform: uppercase;
+  div {
+    height: 180px;
+    overflow: hidden;
+  }
+  h2 {
+    font-size: 220px;
+    letter-spacing: 8px;
+    color: white;
+    line-height: 220px;
+  }
+`;
