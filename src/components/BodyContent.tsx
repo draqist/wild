@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ImageContainer, MainImage, OutlineTextContainer } from "../styles/imageStyles/ImageStyles";
+import { ImageContainer, MainImage, OutlineTextContainer } from "../styles/BodyStyles/ImageStyles";
 import { Wrapper } from "../styles/Wrapper";
 import { mainimageanime, outlineanimation } from "../utils/animations";
 import { carouseldata } from "../utils/data";

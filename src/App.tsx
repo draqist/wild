@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { BodyContent } from "./components/BodyContent";
 import { Mouse } from "./components/mouse";
-import { NextImage, PrevImage } from "./styles/imageStyles/ImageStyles";
+import { NextImage, PrevImage } from "./styles/BodyStyles/ImageStyles";
 import { BodyWrapper, Button, ButtonDiv } from "./styles/Wrapper";
 import { carouseldata } from "./utils/data";
 import { handleNextScroll, handlePrevScroll } from "./utils/helper";
