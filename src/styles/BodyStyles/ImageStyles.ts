@@ -74,7 +74,7 @@ export const MainImage = styled.div`
   .indicator {
     display: flex;
     align-items: center;
-    gap: 24px;
+    /* gap: 24px; */
     position: relative;
     top: -170px;
     z-index: 4;

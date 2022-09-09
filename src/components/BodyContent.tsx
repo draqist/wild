@@ -20,7 +20,6 @@ export const BodyContent = ({ first_line, second_line, img_2x, i, alt, id, img }
               {" "}
               {i + 1} of {carouseldata.length}{" "}
             </p>
-            <p>kk</p>
           </div>
         </MainImage>
         <OutlineTextContainer as={motion.div} variants={outlineanimation} initial="initial" whileInView="animate">
