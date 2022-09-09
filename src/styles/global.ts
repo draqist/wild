@@ -6,10 +6,12 @@ export const GlobalStyles = createGlobalStyle`
         padding: 0;
         outline:0;
         box-sizing:border-box;
+        scrollbar-width: 0;
       }
       #root{
         margin:0 auto;
         height: 100%;
+        scrollbar-width: 0;
     }
     body{
       margin: 0;
@@ -17,6 +19,7 @@ export const GlobalStyles = createGlobalStyle`
       width: 100%;
       scroll-behavior: smooth;
       font-family: "Tungsten";
+      cursor: none;
     }
     h1{
       margin: 0;
@@ -26,6 +29,17 @@ export const GlobalStyles = createGlobalStyle`
       line-height: 186px;
       text-transform: uppercase;
       letter-spacing: 6px;
+      @media (min-width: 1024px) and (max-width: 1260px) {
+        font-size: 210px;
+      }
+      @media (max-width: 768px){
+        font-size: 140px;
+        line-height: 120px;
+      }
+      @media (min-width: 348px) and (max-width: 765px){
+        font-size: 100px;
+        line-height: 90px;
+      }
     }
     h3 {
     text-transform: uppercase;
@@ -38,5 +52,8 @@ export const GlobalStyles = createGlobalStyle`
     left: 16px;
     color: white;
     z-index: 4;
+  }
+  ::-webkit-scrollbar {
+    display: none;
   }
 `;

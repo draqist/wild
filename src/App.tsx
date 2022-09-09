@@ -1,16 +1,18 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { BodyContent } from "./components/BodyContent";
+import { Mouse } from "./components/mouse";
 import { NextImage, PrevImage } from "./styles/imageStyles/ImageStyles";
-import { BodyWrapper } from "./styles/Wrapper";
+import { BodyWrapper, Button, ButtonDiv } from "./styles/Wrapper";
 import { carouseldata } from "./utils/data";
 import { handleNextScroll, handlePrevScroll } from "./utils/helper";
 
 export function App() {
   const [nextslide, setNextSlider] = useState<number>(1);
   const [prevslide, setPrevSlider] = useState<number>(4);
-
+  const ref = useRef(null);
   return (
-    <BodyWrapper id="wrapper">
+    <BodyWrapper id="wrapper" ref={ref}>
+      <Mouse ref={ref} />
       <h3>xyz photography</h3>
       <NextImage
         img={carouseldata[nextslide].img}
@@ -28,6 +30,11 @@ export function App() {
           alt={data.alt}
         />
       ))}
+      <ButtonDiv>
+        <h3> Johanna Hobel for SI </h3>
+        <h4> DEc 2021 </h4>
+        <Button>Have a look</Button>
+      </ButtonDiv>
       <PrevImage
         img={carouseldata[prevslide].img}
         onClick={() => handlePrevScroll(nextslide, prevslide, setNextSlider, setPrevSlider)}

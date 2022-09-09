@@ -8,6 +8,15 @@ export const ImageContainer = styled.div`
   place-items: center;
   margin-top: 80px;
   width: 100%;
+  @media (min-width: 1020px) and (max-width: 1260px) {
+    margin-top: 380px;
+  }
+  @media (max-width: 768px) {
+    margin-top: 270px;
+  }
+  @media (max-width: 412px) {
+    margin-top: 200px;
+  }
 `;
 
 export const OutlineTextContainer = styled.div`
@@ -30,11 +39,29 @@ export const MainImage = styled.div`
   position: relative;
   border: 1px solid black;
   border-radius: 20px;
-  transition: all 2s ease-in;
+  transition: all 0.75s ease-in-out;
+  @media (min-width: 1020px) and (max-width: 1260px) {
+    width: 490px;
+    height: 660px;
+  }
+  @media (max-width: 768px) {
+    width: 360px;
+    height: 510px;
+  }
+  @media (max-width: 412px) {
+    width: 300px;
+    height: 410px;
+  }
   img {
     width: 100%;
     height: 100%;
     border-radius: 20px;
+    transition: all 0.5s ease-out;
+    :hover {
+      transform: scale(1.1);
+      transition: all 0.5s ease-in-out;
+      filter: blur(1px);
+    }
   }
   h1 {
     white-space: nowrap;
@@ -75,6 +102,23 @@ export const NextImage = styled.div<wrapperBg>`
   background-image: url(${(props) => props.img});
   background-size: contain;
   background-position: center;
+  :hover {
+    filter: blur(1.1px);
+    transition: all 0.2s ease-in;
+  }
+  @media (min-width: 1024px) and (max-width: 1260px) {
+    width: 180px;
+    height: 230px;
+  }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    width: 180px;
+    height: 210px;
+  }
+  @media (max-width: 412px) {
+    width: 100px;
+    height: 140px;
+    background-size: cover;
+  }
 `;
 export const PrevImage = styled.div<wrapperBg>`
   width: 248px;
@@ -89,4 +133,21 @@ export const PrevImage = styled.div<wrapperBg>`
   background-image: url(${(props) => props.img});
   background-position: center;
   background-size: contain;
+  :hover {
+    filter: blur(1.1px);
+    transition: all 0.2s ease-in;
+  }
+  @media (min-width: 1024px) and (max-width: 1260px) {
+    width: 180px;
+    height: 230px;
+  }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    width: 180px;
+    height: 210px;
+  }
+  @media (max-width: 412px) {
+    width: 100px;
+    height: 140px;
+    background-size: cover;
+  }
 `;
