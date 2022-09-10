@@ -51,3 +51,22 @@ export const handlePrevScroll = (
     });
   }
 };
+export const scrollRight = (
+  prevslider: number,
+  nextslider: number,
+  setNextSlider: Dispatch<SetStateAction<number>>,
+  setPrevSlider: Dispatch<SetStateAction<number>>
+) => {
+  if (prevslider !== 4 && nextslider !== 1) {
+    return;
+  } else {
+    setNextSlider(nextslider === length - 1 ? 0 : nextslider + 1);
+    setPrevSlider(nextslider === 0 ? 4 : nextslider - 1);
+  }
+};
+export const scrollLeft = (
+  nextslider: number,
+  prevslider: number,
+  setNextSlider: Dispatch<SetStateAction<number>>,
+  setPrevSlider: Dispatch<SetStateAction<number>>
+) => {};

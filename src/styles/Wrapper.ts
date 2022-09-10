@@ -23,7 +23,6 @@ export const BodyWrapper = styled.div`
 
   #progress {
     position: fixed;
-    transform: rotate(-90deg);
     z-index: 6;
     pointer-events: none;
     transform: translate3d(0, 0, 0);
