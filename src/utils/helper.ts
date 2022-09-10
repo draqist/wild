@@ -51,6 +51,9 @@ export const handlePrevScroll = (
     });
   }
 };
+
+//  This was my approach towards creating a scroll triggered nav using javascript logic
+
 export const scrollRight = (
   prevslider: number,
   nextslider: number,
@@ -69,4 +72,6 @@ export const scrollLeft = (
   prevslider: number,
   setNextSlider: Dispatch<SetStateAction<number>>,
   setPrevSlider: Dispatch<SetStateAction<number>>
-) => {};
+) => {
+  return null;
+};
