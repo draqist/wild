@@ -30,14 +30,18 @@ export const BodyWrapper = styled.div`
   }
   #progress .indicator {
     stroke: white;
+    -webkit-stroke: white;
   }
   circle {
     stroke-dashoffset: 0;
+    -webkit-stroke-dashoffset: 0;
     stroke-width: 1.25%;
+    -webkit-stroke-width: 1.25%;
     fill: none;
   }
   .bg {
     stroke: white;
+    -webkit-stroke: white;
     opacity: 0.1;
   }
   .dot {

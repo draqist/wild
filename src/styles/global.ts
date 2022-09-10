@@ -1,4 +1,8 @@
 import { createGlobalStyle } from "styled-components";
+import TungstenBold from "../fonts/Tungsten-Bold.woff";
+import TungstenBold2 from "../fonts/Tungsten-Bold.woff2";
+import TungstenSemi from "../fonts/Tungsten-Semibold.woff";
+import TungstenSemi2 from "../fonts/Tungsten-Semibold.woff2";
 
 export const GlobalStyles = createGlobalStyle`
     *{
@@ -6,19 +10,33 @@ export const GlobalStyles = createGlobalStyle`
         padding: 0;
         outline:0;
         box-sizing:border-box;
-        scrollbar-width: 0;
       }
       #root{
         margin:0 auto;
         height: 100%;
-        scrollbar-width: 0;
+      }
+    @font-face {
+        font-family: 'Tungsten';
+        src: local('Tungsten Bold'), local('TungstenBold'),
+        url(${TungstenBold}) format('woff'),
+        url(${TungstenBold2}) format('woff2');
+        font-weight: 700;
+        font-style: normal;
     }
+    @font-face {
+        font-family:'Tungsten';
+        src: local('Tungsten Semi'), local('Tungsten Semi'),
+        url(${TungstenSemi}) format('woff'),
+        url(${TungstenSemi2}) format('woff2');
+        font-weight: 600;
+        font-style: normal;
+    };
     body{
       margin: 0;
       height: 100%;
       width: 100%;
       scroll-behavior: smooth;
-      font-family: "Tungsten";
+      font-family: "Tungsten", sans-serif;
       cursor: none;
     }
     h1{

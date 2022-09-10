@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import { BodyContent } from "./components/BodyContent";
 import { Mouse } from "./components/mouse";
@@ -13,7 +13,7 @@ export function App() {
   const [prevslide, setPrevSlider] = useState<number>(4);
   const ref = useRef(null);
   return (
-    <AnimatePresence exitBeforeEnter>
+    <>
       <Splash as={motion.div} variants={splashanimation} initial="initial" animate="animate">
         <div>
           <motion.h2 variants={splashtext} initial="initial" animate="animate">
@@ -51,6 +51,6 @@ export function App() {
           onClick={() => handlePrevScroll(nextslide, prevslide, setNextSlider, setPrevSlider)}
         />
       </BodyWrapper>
-    </AnimatePresence>
+    </>
   );
 }

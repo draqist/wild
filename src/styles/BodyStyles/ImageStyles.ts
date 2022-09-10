@@ -8,7 +8,7 @@ export const ImageContainer = styled.div`
   place-items: center;
   margin-top: 80px;
   width: 100%;
-  @media (min-width: 1020px) and (max-width: 1260px) {
+  @media (min-width: 1024px) and (max-width: 1260px) {
     margin-top: 380px;
   }
   @media (max-width: 768px) {
@@ -56,9 +56,9 @@ export const MainImage = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 20px;
-    transition: all 0.5s ease-out;
+    transition: all 0.5s ease-in;
     :hover {
-      transform: scale(1.1);
+      transform: scale(1.25);
       transition: all 0.5s ease-in-out;
       filter: blur(1px);
     }
@@ -82,6 +82,14 @@ export const MainImage = styled.div`
     width: 100%;
     margin: 0 auto;
     justify-content: center;
+    @media (min-width: 1020px) and (max-width: 1260px) {
+    }
+    @media (max-width: 768px) {
+      top: -140px;
+    }
+    @media (max-width: 412px) {
+      top: -120px;
+    }
     p {
       color: white;
       font-size: 14px;
