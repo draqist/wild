@@ -13,7 +13,7 @@ export const outlineanimation = {
     opacity: 1,
     y: "-50%",
     x: "-50%",
-    transition: { duration: 1.2, ease: "easeInOut" },
+    transition: { duration: 1.2, ease: "easeOut" },
     scale: 1,
   },
 };

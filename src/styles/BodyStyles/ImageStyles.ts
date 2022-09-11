@@ -58,7 +58,7 @@ export const MainImage = styled.div`
     border-radius: 20px;
     transition: all 0.5s ease-in;
     :hover {
-      transform: scale(1.25);
+      transform: scale(1.1);
       transition: all 0.5s ease-in-out;
       filter: blur(1px);
     }

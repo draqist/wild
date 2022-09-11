@@ -16,13 +16,15 @@ This install all the dependencies needed to run this application successfully.
 
 #### All `wild` eslint rules was followed to the T
 
-#### Features: 
+#### Features:
+
 - Infinite scrolling
 - Button interaction
 - Main Image hover interaction.
 - navigation images hover interaction.
 
-#### Blockers: 
+#### Blockers:
+
 - `A scroll progress mouse that somehow magically seems to work only in dev mode (still trying to check why)`
 - `Could not change the carousel nav images by scrolling on the page but works perfectly alright when clicking`
 -

@@ -7,9 +7,9 @@ export const Mouse = forwardRef<RefObject<HTMLElement> | undefined>((props, ref)
     window.addEventListener("mousemove", (event) => {
       const { clientX, clientY } = event;
       // @ts-ignore
-      const mouseX = clientX - cursorRef.current.clientWidth / 2;
+      const mouseX = clientX - cursorRef.current.clientWidth / 6;
       // @ts-ignore
-      const mouseY = clientY - cursorRef.current.clientHeight / 2;
+      const mouseY = clientY - cursorRef.current.clientHeight / 6;
       // @ts-ignore
       cursorRef.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
     });

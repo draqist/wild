@@ -20,7 +20,6 @@ export const BodyWrapper = styled.div`
   height: 100vh;
   scroll-snap-type: x proximity;
   scroll-behavior: smooth;
-
   #progress {
     position: fixed;
     z-index: 6;
