@@ -109,6 +109,7 @@ export const NextImage = styled.div<wrapperBg>`
   background-image: url(${(props) => props.img});
   background-size: contain;
   background-position: center;
+  transition: all 0.4s ease-in;
   :hover {
     filter: blur(1.1px);
     transition: all 0.2s ease-in;
@@ -139,6 +140,7 @@ export const PrevImage = styled.div<wrapperBg>`
   background-image: url(${(props) => props.img});
   background-position: center;
   background-size: contain;
+  transition: all 0.4s ease-in;
   :hover {
     filter: blur(1.1px);
     transition: all 0.2s ease-in;

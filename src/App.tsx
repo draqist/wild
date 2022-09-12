@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { useRef, useState } from "react";
+import { motion, useScroll } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { BodyContent } from "./components/BodyContent";
 import { Mouse } from "./components/mouse";
 import { NextImage, PrevImage } from "./styles/BodyStyles/ImageStyles";
@@ -12,6 +12,27 @@ export function App() {
   const [nextslide, setNextSlider] = useState<number>(1);
   const [prevslide, setPrevSlider] = useState<number>(4);
   const ref = useRef(null);
+  const { scrollXProgress } = useScroll({ container: ref });
+  useEffect(() => {
+    scrollXProgress.onChange((scrollvalue) => {
+      if (scrollvalue > 0.2 && scrollvalue <= 0.25) {
+        setPrevSlider(0);
+        setNextSlider(2);
+      } else if (scrollvalue > 0.4 && scrollvalue <= 0.5) {
+        setPrevSlider(1);
+        setNextSlider(3);
+      } else if (scrollvalue > 0.65 && scrollvalue <= 0.75) {
+        setPrevSlider(2);
+        setNextSlider(4);
+      } else if (scrollvalue > 0.95 && scrollvalue <= 1) {
+        setPrevSlider(3);
+        setNextSlider(0);
+      } else {
+        setNextSlider(1);
+        setPrevSlider(4);
+      }
+    });
+  });
   return (
     <>
       <Splash as={motion.div} variants={splashanimation} initial="initial" animate="animate">
@@ -27,7 +48,10 @@ export function App() {
         <h3>xyz photography</h3>
         <NextImage
           img={carouseldata[nextslide].img}
-          onClick={() => handleNextScroll(nextslide, prevslide, setNextSlider, setPrevSlider)}
+          onClick={() => {
+            handleNextScroll(nextslide, prevslide, setNextSlider, setPrevSlider);
+            // console.log("this is the scroll X Progress:", scrollXProgress);
+          }}
         />
         {carouseldata?.map((data, i) => (
           <BodyContent
