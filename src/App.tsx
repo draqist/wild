@@ -27,7 +27,7 @@ export function App() {
       } else if (scrollvalue > 0.95 && scrollvalue <= 1) {
         setPrevSlider(3);
         setNextSlider(0);
-      } else {
+      } else if (scrollvalue == 0) {
         setNextSlider(1);
         setPrevSlider(4);
       }
@@ -50,7 +50,6 @@ export function App() {
           img={carouseldata[nextslide].img}
           onClick={() => {
             handleNextScroll(nextslide, prevslide, setNextSlider, setPrevSlider);
-            // console.log("this is the scroll X Progress:", scrollXProgress);
           }}
         />
         {carouseldata?.map((data, i) => (
