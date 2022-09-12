@@ -14,20 +14,21 @@ export function App() {
   const ref = useRef(null);
   const { scrollXProgress } = useScroll({ container: ref });
   useEffect(() => {
+    // This changes the carousel navigation based on what image is being displayed
     scrollXProgress.onChange((scrollvalue) => {
       if (scrollvalue > 0.2 && scrollvalue <= 0.25) {
         setPrevSlider(0);
         setNextSlider(2);
-      } else if (scrollvalue > 0.4 && scrollvalue <= 0.5) {
+      } else if (scrollvalue > 0.425 && scrollvalue <= 0.5) {
         setPrevSlider(1);
         setNextSlider(3);
-      } else if (scrollvalue > 0.65 && scrollvalue <= 0.75) {
+      } else if (scrollvalue > 0.7 && scrollvalue <= 0.75) {
         setPrevSlider(2);
         setNextSlider(4);
       } else if (scrollvalue > 0.95 && scrollvalue <= 1) {
         setPrevSlider(3);
         setNextSlider(0);
-      } else if (scrollvalue == 0) {
+      } else if (scrollvalue === 0) {
         setNextSlider(1);
         setPrevSlider(4);
       }
