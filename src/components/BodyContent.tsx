@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { useRef } from "react";
 import { ImageContainer, MainImage, OutlineTextContainer } from "../styles/BodyStyles/ImageStyles";
 import { Wrapper } from "../styles/Wrapper";
 import { mainimageanime, outlineanimation } from "../utils/animations";
@@ -7,9 +6,8 @@ import { carouseldata } from "../utils/data";
 import { Carousel } from "../utils/types";
 
 export const BodyContent = ({ first_line, second_line, img_2x, i, alt, id, img }: Carousel) => {
-  const bodyRef = useRef(null);
   return (
-    <Wrapper img={img_2x} id={i.toString()} ref={bodyRef}>
+    <Wrapper img={img_2x} id={i.toString()}>
       <ImageContainer>
         <MainImage as={motion.div} variants={mainimageanime} initial="initial" whileInView="animate">
           <img src={img} alt={alt} />

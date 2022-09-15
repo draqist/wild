@@ -17,7 +17,7 @@ export const Mouse = forwardRef<RefObject<HTMLElement> | undefined>((props, ref)
   // @ts-ignore
   const { scrollXProgress } = useScroll({ container: ref });
   return (
-    <svg id="progress" width="100" height="100" viewBox="0 0 100 100" ref={cursorRef}>
+    <svg id="progress" width="70" height="70" viewBox="0 0 100 100" ref={cursorRef}>
       <circle cx="40" cy="40" r="2" pathLength="1" className="dot" />
       <circle cx="40" cy="40" r="20" pathLength="1" className="bg" />
       <motion.circle

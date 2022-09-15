@@ -25,5 +25,5 @@ This install all the dependencies needed to run this application successfully.
 
 #### Blockers:
 
-- `A scroll progress mouse that somehow magically seems to work only in dev mode (still trying to check why)`
+- `A scroll progress cursor that somehow magically seems to work only (locally) dev mode (still trying to check why)`
 
