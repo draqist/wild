@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { BodyContent } from "./components/BodyContent";
 import { Mouse } from "./components/mouse";
 import { NextImage, PrevImage } from "./styles/BodyStyles/ImageStyles";
-import { BodyWrapper, Button, ButtonDiv, Splash } from "./styles/Wrapper";
+import { Button, DetailsDiv, FlexContainer, Splash } from "./styles/Wrapper";
 import { splashanimation, splashtext } from "./utils/animations";
 import { carouseldata } from "./utils/data";
 import { handleNextScroll, handlePrevScroll } from "./utils/helper";
@@ -13,6 +13,7 @@ export function App() {
   const [prevslide, setPrevSlider] = useState<number>(4);
   const ref = useRef(null);
   const { scrollXProgress } = useScroll({ container: ref });
+
   useEffect(() => {
     // This changes the carousel navigation based on what image is being displayed
     scrollXProgress.onChange((scrollvalue) => {
@@ -36,21 +37,12 @@ export function App() {
   });
   return (
     <>
-      <Splash as={motion.div} variants={splashanimation} initial="initial" animate="animate">
-        <div>
-          <motion.h2 variants={splashtext} initial="initial" animate="animate">
-            {" "}
-            XYZ photography
-          </motion.h2>
-        </div>
-      </Splash>
-      <BodyWrapper id="wrapper" ref={ref}>
-        <Mouse ref={ref} />
+      <FlexContainer id="wrapper" ref={ref}>
         <h3>xyz photography</h3>
         <NextImage
           img={carouseldata[nextslide].img}
           onClick={() => {
-            handleNextScroll(nextslide, prevslide, setNextSlider, setPrevSlider);
+            handleNextScroll(nextslide, prevslide, setNextSlider, setPrevSlider, ref);
           }}
         />
         {carouseldata?.map((data, i) => (
@@ -65,16 +57,25 @@ export function App() {
             alt={data.alt}
           />
         ))}
-        <ButtonDiv>
+        <DetailsDiv>
           <h3> Johanna Hobel for SI </h3>
           <h4> DEc 2021 </h4>
           <Button>Have a look</Button>
-        </ButtonDiv>
+        </DetailsDiv>
         <PrevImage
           img={carouseldata[prevslide].img}
-          onClick={() => handlePrevScroll(nextslide, prevslide, setNextSlider, setPrevSlider)}
+          onClick={() => handlePrevScroll(nextslide, prevslide, setNextSlider, setPrevSlider, ref)}
         />
-      </BodyWrapper>
+        <Mouse ref={ref} />
+      </FlexContainer>
+      <Splash as={motion.div} variants={splashanimation} initial="initial" animate="animate">
+        <div>
+          <motion.h2 variants={splashtext} initial="initial" animate="animate">
+            {" "}
+            XYZ photography
+          </motion.h2>
+        </div>
+      </Splash>
     </>
   );
 }

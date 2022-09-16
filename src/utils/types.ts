@@ -6,7 +6,7 @@ export interface Carousel {
   id: string;
   alt: string;
   key: number;
-  i: number;
+  i: number
 }
 
 export interface wrapperBg {

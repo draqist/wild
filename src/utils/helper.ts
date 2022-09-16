@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, MutableRefObject, SetStateAction } from "react";
 import { carouseldata } from "./data";
 
 const { innerWidth } = window;
@@ -7,13 +7,12 @@ export const handleNextScroll = (
   nextslide: number,
   prevslide: number,
   setNextSlider: Dispatch<SetStateAction<number>>,
-  setPrevSlider: Dispatch<SetStateAction<number>>
+  setPrevSlider: Dispatch<SetStateAction<number>>,
+  ref: MutableRefObject<null>
 ) => {
-  const element = document.getElementById("wrapper");
-  const flowers = document.getElementById("0");
-  if (nextslide === 0 && prevslide === 3) {
-    flowers?.scrollIntoView({
-      behavior: "smooth",
+  if (nextslide === 0 && prevslide === length - 2) {
+    // @ts-ignore
+    ref.current.children[2]?.scrollIntoView({
       block: "start",
     });
     setNextSlider(nextslide === length - 1 ? 0 : nextslide + 1);
@@ -21,9 +20,9 @@ export const handleNextScroll = (
   } else {
     setNextSlider(nextslide === length - 1 ? 0 : nextslide + 1);
     setPrevSlider(nextslide === 0 ? 4 : nextslide - 1);
-    element?.scrollBy({
+    // @ts-ignore
+    ref.current?.scrollBy({
       left: innerWidth,
-      behavior: "smooth",
     });
   }
 };
@@ -31,13 +30,12 @@ export const handlePrevScroll = (
   nextslide: number,
   prevslide: number,
   setNextSlider: Dispatch<SetStateAction<number>>,
-  setPrevSlider: Dispatch<SetStateAction<number>>
+  setPrevSlider: Dispatch<SetStateAction<number>>,
+  ref: MutableRefObject<null>
 ) => {
-  const flowers = document.getElementById("4");
-  const element = document.getElementById("wrapper");
   if (nextslide === 1 && prevslide === 4) {
-    flowers?.scrollIntoView({
-      behavior: "smooth",
+    // @ts-ignore
+    ref.current.children[6]?.scrollIntoView({
       block: "start",
     });
     setPrevSlider(prevslide === 4 ? prevslide - 1 : prevslide - 1);
@@ -45,33 +43,9 @@ export const handlePrevScroll = (
   } else {
     setPrevSlider(prevslide === 0 ? 4 : prevslide - 1);
     setNextSlider(prevslide === length - 1 ? 0 : prevslide + 1);
-    element?.scrollBy({
+    // @ts-ignore
+    ref?.current.scrollBy({
       left: -innerWidth,
-      behavior: "smooth",
     });
   }
-};
-
-//  This was my approach towards creating a scroll triggered nav using javascript logic
-
-export const scrollRight = (
-  prevslider: number,
-  nextslider: number,
-  setNextSlider: Dispatch<SetStateAction<number>>,
-  setPrevSlider: Dispatch<SetStateAction<number>>
-) => {
-  if (prevslider !== 4 && nextslider !== 1) {
-    return;
-  } else {
-    setNextSlider(nextslider === length - 1 ? 0 : nextslider + 1);
-    setPrevSlider(nextslider === 0 ? 4 : nextslider - 1);
-  }
-};
-export const scrollLeft = (
-  nextslider: number,
-  prevslider: number,
-  setNextSlider: Dispatch<SetStateAction<number>>,
-  setPrevSlider: Dispatch<SetStateAction<number>>
-) => {
-  return null;
 };

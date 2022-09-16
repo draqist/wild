@@ -7,7 +7,7 @@ import { Carousel } from "../utils/types";
 
 export const BodyContent = ({ first_line, second_line, img_2x, i, alt, id, img }: Carousel) => {
   return (
-    <Wrapper img={img_2x} id={i.toString()}>
+    <Wrapper img={img_2x} id={id}>
       <ImageContainer>
         <MainImage as={motion.div} variants={mainimageanime} initial="initial" whileInView="animate">
           <img src={img} alt={alt} />

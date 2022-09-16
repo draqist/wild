@@ -35,7 +35,7 @@ export const GlobalStyles = createGlobalStyle`
       margin: 0;
       height: 100%;
       width: 100%;
-      scroll-behavior: smooth;
+      /* scroll-behavior: smooth; */
       font-family: "Tungsten", sans-serif;
       cursor: none;
     }

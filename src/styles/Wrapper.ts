@@ -13,7 +13,7 @@ export const Wrapper = styled.div<wrapperBg>`
   scroll-snap-align: center;
 `;
 
-export const BodyWrapper = styled.div`
+export const FlexContainer = styled.div`
   display: flex;
   overflow-y: hidden;
   padding: 0;
@@ -47,7 +47,7 @@ export const BodyWrapper = styled.div`
   }
 `;
 
-export const ButtonDiv = styled.div`
+export const DetailsDiv = styled.div`
   width: 109px;
   position: absolute;
   right: 155px;
