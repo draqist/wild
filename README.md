@@ -18,12 +18,19 @@ This install all the dependencies needed to run this application successfully.
 
 #### Features:
 
-- Infinite scrolling
 - Button interaction
 - Main Image hover interaction.
 - navigation images hover interaction.
 
 #### Blockers:
-
 - `A scroll progress cursor that somehow magically seems to work only (locally) dev mode (still trying to check why)`
+- ##### Infinite scrolling:
+I am unable to do this at the moment but here are the two approaches that I thought of
+
+- at the end of data, I write a function to append the carousel data again which in turn replicates the data every time the end is reach. I thought this as in efficient as it will take up too much space after scrolling a couple times.
+- Another was to stack the images on top of each other with absolute position then transform then in and out depending on the one in view. (This looks most feasible and I'd need to redesign the whole app to get it)
+
+- The other option was to reverse the array at the end. (Terrible Idea) 
+
+
 

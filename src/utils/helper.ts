@@ -3,6 +3,7 @@ import { carouseldata } from "./data";
 
 const { innerWidth } = window;
 const length = carouseldata.length;
+
 export const handleNextScroll = (
   nextslide: number,
   prevslide: number,
