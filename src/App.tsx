@@ -15,8 +15,9 @@ export function App() {
   const { scrollXProgress } = useScroll({ container: ref });
 
   useEffect(() => {
-    // This changes the carousel navigation based on what image is being displayed
-    scrollXProgress.onChange((scrollvalue) => {
+    // This changes the carousel navigation based on what image is being displayed --- ALSO THE SCROLLPROGRESSVALUE IS A NUMBER BETWEEN 0 AND 1
+
+    const progress = scrollXProgress.onChange((scrollvalue) => {
       if (scrollvalue > 0.2 && scrollvalue <= 0.25) {
         setPrevSlider(0);
         setNextSlider(2);
@@ -34,7 +35,9 @@ export function App() {
         setPrevSlider(4);
       }
     });
-  });
+
+    return () => progress();
+  }, []);
   return (
     <>
       <FlexContainer id="wrapper" ref={ref}>
