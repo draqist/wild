@@ -5,6 +5,17 @@
 This install all the dependencies needed to run this application successfully.
 
 #### It is a simple carousel with infinite scroll, some animation and interactions.
+#### Blockers:
+- `A scroll progress cursor that somehow magically seems to work only (locally) dev mode (still trying to check why)`
+- #### Infinite scrolling:
+#### I am unable to do this at the moment because I've implemented both the scroll and the button navigations but here are the approaches that I thought could make it happen
+
+- at the end of data, I write a function to append the carousel data again which in turn replicates the data every time the end is reach. I thought this as in efficient as it will take up too much space after scrolling a couple times.
+- Another option would be to stack the images on top of each other with absolute position then transform then in and out depending on the one in view. (This looks most feasible and I'd need to redesign the whole app to get it)
+
+- Another would be to toggle a class of `active` based on the element in view but this approach robs me of the dynamic scroll navigation meaning I would not (in my capacity) be able to have both the scroll and click functioning properly.
+
+- The other option was to reverse the array at the end. (Terrible Idea) 
 
 ## The src folder contains
 
@@ -22,17 +33,6 @@ This install all the dependencies needed to run this application successfully.
 - Main Image hover interaction.
 - navigation images hover interaction.
 
-#### Blockers:
-- `A scroll progress cursor that somehow magically seems to work only (locally) dev mode (still trying to check why)`
-- #### Infinite scrolling:
-#### I am unable to do this at the moment but here are the approaches that I thought could make it happen
-
-- at the end of data, I write a function to append the carousel data again which in turn replicates the data every time the end is reach. I thought this as in efficient as it will take up too much space after scrolling a couple times.
-- Another option would be to stack the images on top of each other with absolute position then transform then in and out depending on the one in view. (This looks most feasible and I'd need to redesign the whole app to get it)
-
-- Another would be to toggle a class of `active` based on the element in view but this approach robs me of the dynamic scroll navigation meaning I would not (in my capacity) be able to have both the scroll and click functioning properly.
-
-- The other option was to reverse the array at the end. (Terrible Idea) 
 
 
 
